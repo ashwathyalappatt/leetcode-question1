@@ -1,0 +1,20 @@
+lass Solution {
+public:
+    int findComplement(int num) {
+        int m =0;
+        int newNum = num;
+        unsigned int mask =0;
+        // finding bitlength 
+        
+        while(newNum)
+        {
+            newNum>>=1;
+            m++;
+        }
+        
+        // unsigned int to prevent overflow.
+        mask =  (unsigned int)(1<<(m)) -1 ;
+        
+        return num ^ mask;
+    }
+};
