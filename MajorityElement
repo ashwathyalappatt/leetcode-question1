@@ -1,0 +1,18 @@
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+        map<int,int>nmap;
+        int max_elem=0;
+        int max_count =0;
+        for(int i =0;i<nums.size();i++)
+        {
+            nmap[nums[i]]++;
+            if(nmap[nums[i]] > max_count)
+            {
+                max_count = nmap[nums[i]];
+                max_elem = nums[i];
+            }
+        }
+        return max_elem;
+    }
+};
