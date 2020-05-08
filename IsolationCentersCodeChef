@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+#include <vector>
+
+int main() {
+	// your code goes here
+	int in;
+	cin>>in;
+	for(int i =0;i<in;i++)
+	{
+	    //map<char,int>nmap;
+	    vector<int>myQ;
+	    vector<int>myVect(26);
+	    string str;
+	    int noOfPeople = 0;
+	    int noOfQ = 0;
+	    cin>>noOfPeople>>noOfQ;
+	    cin>>str;
+	    for(int v =0; v<str.size(); v++)
+	    {
+	        myVect[str[v]-'a']++;
+	    }
+	    for(int l =0;l<noOfQ;l++)
+	    {
+	        int count = 0;
+	        int n;
+	        cin>>n;
+	        //muQ.push_back(n);
+	        for(int k=0;k<26;k++)
+	        {
+	            if(n < myVect[k])
+	               count = count + myVect[k] - n;
+	        }
+	        cout << count<<"\n";
+	    }
+	    
+	}
+	return 0;
+}
