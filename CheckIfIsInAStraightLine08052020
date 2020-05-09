@@ -24,3 +24,7 @@ public:
         
     }
 };
+
+/* Review
+What if the given line is parallel to y axis then the x co-ordintes will be same. So denominator will be 0 and will lead to error.
+*/
