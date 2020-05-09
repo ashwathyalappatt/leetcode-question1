@@ -16,3 +16,8 @@ public:
         return max_elem;
     }
 };
+
+/* Review 
+There is an algorith the Boyer Moore algorithm which makes space complexity constant, we can use this algorithm since the element is present 
+more that n / 2 times. There other variations as well please check in LC.
+*/
