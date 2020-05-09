@@ -17,3 +17,7 @@ public:
         
     }
 };
+
+/* Review
+unordered_map comes with the cost of hashing if the key bounds are known and the keys are known its better to use array to avoid cost of hashing.
+*/
