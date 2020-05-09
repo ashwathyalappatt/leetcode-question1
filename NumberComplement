@@ -18,3 +18,7 @@ public:
         return num ^ mask;
     }
 };
+
+/* Review
+To find the length you can use the log funtion, log of the number in corresponding base + 1 would give you the number of digits.
+*/
