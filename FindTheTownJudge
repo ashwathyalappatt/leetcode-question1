@@ -1,0 +1,35 @@
+//Space O(N)
+//Time O(N)
+
+// Shitty logic, need to improve.
+
+class Solution {
+public:
+    int findJudge(int N, vector<vector<int>>& trust) {
+        map<int,int>nmap;
+        int count =0;
+        int row = trust.size();
+        int x =0;
+        int foo ;
+        for(int i =0; i<row; i++)
+        {
+            nmap[trust[i][0]] = trust[i][1];
+        }
+        if(nmap.size() == 1)
+            return trust[0][1];
+        if(nmap.empty())
+            return 1;
+        for(int i =0;i<row;i++)
+        {
+            if(!nmap[trust[i][1]])
+            {
+                count++;
+                foo = trust[i][1];
+            }
+        }
+        if(count == (N-1))
+            return foo;
+        else return -1;
+        
+    }
+};
