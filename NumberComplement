@@ -22,3 +22,25 @@ public:
 /* Review
 To find the length you can use the log funtion, log of the number in corresponding base + 1 would give you the number of digits.
 */
+
+
+
+class Solution {
+public:
+    int findComplement(int num) {
+        int m =0;
+        int newNum = num;
+        unsigned int mask =0;
+        // finding bitlength 
+        
+        m = log2(num)+1;
+        cout<<"m1"<<m;
+        
+        // unsigned int to prevent overflow.
+        mask =  (unsigned int)(1<<(m)) -1 ;
+        
+        return num ^ mask;
+    }
+};
+
+// update after review.
