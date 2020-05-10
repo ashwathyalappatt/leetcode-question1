@@ -1,0 +1,23 @@
+/*Pretty Proud of this logic !! ^-^
+Time: O(sqrt(N))
+Space: None ?? 
+
+*/
+
+class Solution {
+public:
+    bool isPerfectSquare(int num) {
+        if(num == 1)
+            return true;
+        for(int i =2;i <= sqrt(num);i++)
+        {
+            if((i*i) == num)
+            {
+                return true;
+            }
+        
+        }
+        return false;
+        
+    }
+};
