@@ -1,0 +1,83 @@
+class Trie {
+    private:
+    struct TriNode
+    {
+        bool is_string;
+        array<TriNode* , 26> characters;
+        
+        TriNode():is_string(0),characters{nullptr}
+        {
+        ios::sync_with_stdio(0);
+        cin.tie(0);
+            
+        }
+        
+    };
+    
+    TriNode * root = new TriNode();
+ 
+public:
+    /** Initialize your data structure here. */
+    Trie() : root(new TriNode()){
+        
+
+    }
+        
+        
+        
+    
+    /** Inserts a word into the trie. */
+    void insert(string word) {
+        auto it = root;
+        for(auto x: word)
+        {
+            int index = x - 'a';
+            if(it->characters[index] == nullptr)
+            {
+                it->characters[index] = new TriNode;
+            }
+            it = it->characters[index];
+        }
+        it->is_string = true;
+    }
+    
+    /** Returns if the word is in the trie. */
+    bool search(string word) {
+        auto ret = find(word);
+        if(ret!=nullptr && ret->is_string)
+            return true;
+        else 
+            return false;
+    }
+    
+   TriNode* find(string &word)
+   {
+       auto it = root;
+       for(auto x: word)
+       {
+           int index = x - 'a';
+           if(it->characters[index] == nullptr)
+           {
+               return nullptr;
+           }
+           it = it->characters[index];
+       }
+       return it;
+   }
+    /** Returns if there is any word in the trie that starts with the given prefix. */
+    bool startsWith(string prefix) {
+        auto ret = find(prefix);
+        if(ret!=nullptr )
+            return true;
+        else 
+            return false;
+    }
+};
+
+/**
+ * Your Trie object will be instantiated and called as such:
+ * Trie* obj = new Trie();
+ * obj->insert(word);
+ * bool param_2 = obj->search(word);
+ * bool param_3 = obj->startsWith(prefix);
+ */
