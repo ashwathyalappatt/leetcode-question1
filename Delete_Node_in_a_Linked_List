@@ -1,0 +1,18 @@
+class Solution {
+public:
+    void deleteNode(ListNode* node) {
+        ListNode* temp = NULL ;
+        ListNode* currNode = NULL;
+        while(node->next != NULL)
+        {
+           currNode = node;
+           node->val = node->next->val;
+           node = node->next;
+        }
+ 
+        cout<<"currNode"<<currNode->val<<" ";
+        currNode->next = NULL;
+     
+        
+    }
+};
